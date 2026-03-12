@@ -25,6 +25,7 @@ public class MapDataSource {
     public List<MapMarker> loadMarkers(int count) {
         Random rnd = new Random(7);
         List<MapMarker> out = new ArrayList<>(count);
+        MarkerStyleFactory factory = new MarkerStyleFactory();
 
         for (int i = 0; i < count; i++) {
             double lat = 12.9000 + rnd.nextDouble() * 0.2000;
@@ -37,7 +38,9 @@ public class MapDataSource {
             int size = SIZES[rnd.nextInt(SIZES.length)];
             boolean filled = rnd.nextBoolean();
 
-            out.add(new MapMarker(lat, lng, label, shape, color, size, filled));
+            // Use factory to get shared style instance
+            MarkerStyle style = factory.get(shape, color, size, filled);
+            out.add(new MapMarker(lat, lng, label, style));
         }
         return out;
     }
