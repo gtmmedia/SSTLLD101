@@ -224,13 +224,4 @@ public class RateLimiterTest {
         System.out.println("  ✓ External service integration works perfectly!\n");
     }
     
-    // ===========================
-    // Helper: Assert
-    // ===========================
-    
-    static void assert(boolean condition, String message) {
-        if (!condition) {
-            throw new AssertionError(message);
-        }
-    }
 }

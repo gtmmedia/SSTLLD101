@@ -3,8 +3,8 @@ package com.example;
 public class Ink {
     private Color color;
     private double quantityInMl;
-    private String type;
-    private double viscosity;
+    private final String type;
+    private final double viscosity;
 
     public Ink(Color color, double quantityInMl, String type, double viscosity) {
         this.color = color;

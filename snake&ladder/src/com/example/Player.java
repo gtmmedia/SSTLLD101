@@ -1,7 +1,7 @@
 package com.example;
 
 public class Player {
-    private String name;
+    private final String name;
     private int position;           // Current position on the board (0 = outside board)
     private boolean isActive;       // Whether player is still in the game
 

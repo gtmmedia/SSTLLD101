@@ -27,27 +27,26 @@ public class PenFactory {
     }
 
     public static Pen createCustomPen(String penType, String brand, String model, Color inkColor, double nibSize) {
-        switch (penType.toLowerCase()) {
-            case "ballpoint":
+        return switch (penType.toLowerCase()) {
+            case "ballpoint" -> {
                 Ink ballpointInk = new Ink(inkColor, 10.0, "Oil-based", 0.8);
                 Nib ballpointNib = new Nib(nibSize, "Steel", Nib.NibType.BALLPOINT);
                 Refill ballpointRefill = new Refill(ballpointInk, ballpointNib);
-                return new BallpointPen(brand, model, ballpointRefill, nibSize, "Tungsten Carbide");
-
-            case "gel":
+                yield new BallpointPen(brand, model, ballpointRefill, nibSize, "Tungsten Carbide");
+            }
+            case "gel" -> {
                 Ink gelInk = new Ink(inkColor, 8.0, "Water-based gel", 0.5);
                 Nib gelNib = new Nib(nibSize, "Ceramic", Nib.NibType.GEL);
                 Refill gelRefill = new Refill(gelInk, gelNib);
-                return new GelPen(brand, model, gelRefill, 1.2, true);
-
-            case "fountain":
+                yield new GelPen(brand, model, gelRefill, 1.2, true);
+            }
+            case "fountain" -> {
                 Ink fountainInk = new Ink(inkColor, 15.0, "Water-based", 0.3);
                 Nib fountainNib = new Nib(nibSize, "Gold", Nib.NibType.FOUNTAIN);
                 Refill fountainRefill = new Refill(fountainInk, fountainNib);
-                return new FountainPen(brand, model, fountainRefill, nibSize, "Tapered");
-
-            default:
-                throw new IllegalArgumentException("Unknown pen type: " + penType);
-        }
+                yield new FountainPen(brand, model, fountainRefill, nibSize, "Tapered");
+            }
+            default -> throw new IllegalArgumentException("Unknown pen type: " + penType);
+        };
     }
 }

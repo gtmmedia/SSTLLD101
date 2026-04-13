@@ -3,14 +3,14 @@ package com.example;
 import java.util.*;
 
 public class SnakeAndLadderGame {
-    private Board board;
-    private List<Player> players;
-    private Dice dice;
+    private final Board board;
+    private final List<Player> players;
+    private final Dice dice;
     private int currentPlayerIndex;
-    private DifficultyLevel difficultyLevel;
+    private final DifficultyLevel difficultyLevel;
     private GameState gameState;
     private int consecutiveSixCount;
-    private List<Player> winners;
+    private final List<Player> winners;
 
     public SnakeAndLadderGame(int boardSize, List<String> playerNames, DifficultyLevel difficultyLevel) {
         this.board = new Board(boardSize);

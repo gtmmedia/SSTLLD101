@@ -3,10 +3,10 @@ package com.example;
 import java.util.*;
 
 public class Board {
-    private int boardSize;
-    private Cell[] cells;
-    private Map<Integer, Snake> snakes;
-    private Map<Integer, Ladder> ladders;
+    private final int boardSize;
+    private final Cell[] cells;
+    private final Map<Integer, Snake> snakes;
+    private final Map<Integer, Ladder> ladders;
 
     public Board(int boardSize) {
         this.boardSize = boardSize;

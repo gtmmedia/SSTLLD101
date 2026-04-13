@@ -3,7 +3,7 @@ package com.example;
 import java.util.Scanner;
 
 public class GameInput {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public GameInput() {
         this.scanner = new Scanner(System.in);

@@ -13,13 +13,10 @@ public class ExternalServiceExample {
     
     // Rate limit configuration: 5 calls per minute per customer
     private final RateLimitConfig customerLimitPerMinute = new RateLimitConfig(5, 60);
-    // Rate limit configuration: 20 calls per hour per tenant
-    private final RateLimitConfig tenantLimitPerHour = new RateLimitConfig(20, 3600);
-    
     /**
      * Initialize with a specific algorithm (SlidingWindow is more accurate)
      */
-    public ExternalServiceExample(ExternalDataProvider provider) {
+    ExternalServiceExample(ExternalDataProvider provider) {
         this.externalProvider = provider;
         this.rateLimiter = new RateLimiter(new SlidingWindowCounter());
     }
@@ -100,7 +97,7 @@ public class ExternalServiceExample {
      * Response object for analysis requests
      */
     public static class AnalysisResponse {
-        enum Status { SUCCESS, RATE_LIMITED, ERROR }
+        public enum Status { SUCCESS, RATE_LIMITED, ERROR }
         
         private final Status status;
         private final String message;

@@ -1,8 +1,8 @@
 package com.example;
 
 public class GelPen extends Pen {
-    private double gelDensity;
-    private boolean isPressurized;
+    private final double gelDensity;
+    private final boolean isPressurized;
 
     public GelPen(String brand, String model, Refill refill, double gelDensity, boolean isPressurized) {
         super(brand, model, refill);

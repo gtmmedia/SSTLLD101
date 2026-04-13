@@ -1,8 +1,8 @@
 package com.example;
 
 public class BallpointPen extends Pen {
-    private double ballDiameter;
-    private String ballMaterial;
+    private final double ballDiameter;
+    private final String ballMaterial;
 
     public BallpointPen(String brand, String model, Refill refill, double ballDiameter, String ballMaterial) {
         super(brand, model, refill);

@@ -1,7 +1,7 @@
 package com.example;
 
 public class Cell {
-    private int position;
+    private final int position;
     private Snake snake;
     private Ladder ladder;
 

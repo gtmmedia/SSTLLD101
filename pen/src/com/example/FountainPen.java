@@ -1,8 +1,8 @@
 package com.example;
 
 public class FountainPen extends Pen {
-    private double tipWidth;
-    private String tipTaper;
+    private final double tipWidth;
+    private final String tipTaper;
     private boolean isInked;
 
     public FountainPen(String brand, String model, Refill refill, double tipWidth, String tipTaper) {
